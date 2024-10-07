@@ -9,13 +9,12 @@ Este proyecto es una aplicación basada en microservicios construida utilizando 
 2. [Estructura del Proyecto](#estructura-del-proyecto)
 3. [Configuración](#configuración)
 4. [Ejecución del Proyecto](#ejecución-del-proyecto)
-5. [Datos Semilla](#datos-semilla)
-6. [Endpoints](#endpoints)
-7. [Variables de Entorno](#variables-de-entorno)
-8. [Scripts del package.json](#scripts-del-package-json)
-9. [Patrones de Diseño y Buenas Prácticas](#patrones-de-diseño-y-buenas-prácticas)
-10. [Solución de Problemas](#solución-de-problemas)
-11. [Contacto](#contacto)
+5. [Endpoints](#endpoints)
+6. [Variables de Entorno](#variables-de-entorno)
+7. [Scripts del package.json](#scripts-del-package-json)
+8. [Patrones de Diseño y Buenas Prácticas](#patrones-de-diseño-y-buenas-prácticas)
+9. [Solución de Problemas](#solución-de-problemas)
+10. [Contacto](#contacto)
 
 ---
 
@@ -89,9 +88,27 @@ Asegúrate de tener Docker instalado y funcionando, luego ejecuta el siguiente c
 npm run docker:up
 ```
 
-Este comando levantará tanto la aplicación Node.js como el servicio de PostgreSQL en contenedores Docker. La aplicación estará disponible en `http://localhost:3000`.
+Este comando levantará tanto la aplicación Node.js como el servicio de PostgreSQL en contenedores Docker. La aplicación estará disponible en `http://localhost:30012`.
 
-### 2. Detener el proyecto en Docker
+### 2. Ingresar al contenedor con `sh`
+
+Ejecuta el siguiente comando:
+
+```bash
+npm run docker:cmd
+```
+### 3. Ejecute la migración y el archivo semilla
+
+Ejecuta los siguientes comandos en el siguiente orden y asegurate de estar dentro del contenedor:
+
+```bash
+npm run db:migration
+```
+```bash
+npm run db:seed
+```
+
+### 4. Detener el proyecto en Docker
 
 Para detener el proyecto en Docker, puedes ejecutar el siguiente comando:
 
@@ -105,7 +122,19 @@ Si prefieres ejecutar el proyecto localmente, sigue estos pasos:
 
 1. Asegúrate de tener PostgreSQL instalado y en ejecución localmente.
 2. Crea una base de datos en PostgreSQL que coincida con el nombre en tu archivo `.env`.
-3. Instala las dependencias:
+
+Comando para listar las tablas
+
+```bash
+\dt
+```
+
+Comando para crear la base de datos
+```bash
+CREATE DATABASE mydatabase;
+```
+   
+4. Instala las dependencias:
 
 ```bash
 npm install
@@ -130,22 +159,6 @@ npm start
 ```
 
 La aplicación estará disponible en `http://localhost:3000`.
-
-## Datos Semilla
-
-Para poblar la base de datos con datos de prueba (semilla), ejecuta el siguiente comando:
-
-- **Con Docker:**
-
-```bash
-docker-compose exec app npm run db:seed
-```
-
-- **Localmente:**
-
-```bash
-npm run db:seed
-```
 
 ## Endpoints
 
