@@ -123,6 +123,20 @@ Si prefieres ejecutar el proyecto localmente, sigue estos pasos:
 1. Asegúrate de tener PostgreSQL instalado y en ejecución localmente.
 2. Crea una base de datos en PostgreSQL que coincida con el nombre en tu archivo `.env`.
 
+Comandos utiles en MacBook con PostgreSQL
+
+Comando para levantar el servicio de postgresql en MackBook
+
+```bash
+brew services start postgresql@14
+```
+
+Comando para usar el usuario postgres 
+
+```bash
+psql -U postgres -d mydatabase
+```
+
 Comando para listar las tablas
 
 ```bash
@@ -134,7 +148,7 @@ Comando para crear la base de datos
 CREATE DATABASE mydatabase;
 ```
    
-4. Instala las dependencias:
+3. Instala las dependencias:
 
 ```bash
 npm install
