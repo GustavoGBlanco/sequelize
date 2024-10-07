@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node src/app.js",
+    "docker:cmd": "docker-compose exec microservice sh",
     "docker:up": "docker-compose --env-file .env up --build",
     "docker:down": "docker-compose down",
     "db:migration": "npx sequelize-cli db:migrate",
