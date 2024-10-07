@@ -58,8 +58,8 @@ project-root/
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone <url_del_repositorio>
-cd nombre-del-repositorio
+git clone https://github.com/GustavoGBlanco/sequalize.git
+cd sequalize
 ```
 
 ### 2. Variables de Entorno
