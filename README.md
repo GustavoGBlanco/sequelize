@@ -57,8 +57,8 @@ project-root/
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/GustavoGBlanco/sequalize.git
-cd sequalize
+git clone https://github.com/GustavoGBlanco/sequelize.git
+cd sequelize
 ```
 
 ### 2. Variables de Entorno
@@ -188,6 +188,7 @@ El archivo `.env` se encuentra en el directorio raíz del proyecto y contiene la
 Los siguientes scripts están definidos en el archivo `package.json`:
 
 - **start**: Inicia la aplicación (`node src/app.js`).
+- **docker:cmd**: Ingreso al contenedor (`docker-compose exec microservice sh`).
 - **docker:up**: Levanta los contenedores Docker (`docker-compose --env-file .env up --build`).
 - **docker:down**: Detiene los contenedores Docker (`docker-compose down`).
 - **db:migration**: Ejecuta las migraciones de la base de datos (`npx sequelize-cli db:migrate`).
